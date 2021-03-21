@@ -48,9 +48,6 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
   ;; (tabulated-list-print t)
   (tabulated-list-print))
 
-;; Mouse cursor in terminal mode
-(xterm-mouse-mode 1)
-
 ;; Highlight and allow to open http link at point in programming buffers
 ;; goto-address-prog-mode only highlights links in strings and comments
 (add-hook 'prog-mode-hook 'goto-address-prog-mode)
@@ -65,6 +62,20 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
 
 ;; Don't try to ping things that look like domain names
 (setq ffap-machine-p-known 'reject)
+
+;; ---------------------------------------------------------------------------
+;; Mouse
+;; ---------------------------------------------------------------------------
+
+;; Mouse cursor in terminal mode
+(xterm-mouse-mode 1)
+;; scroll one line at a time (less "jumpy" than defaults)
+;; two lines at a time
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 1)))
+;; don't accelerate scrolling
+(setq mouse-wheel-progressive-speed nil)
+;; scroll window under mouse
+(setq mouse-wheel-follow-mouse 't)
 
 ;; ---------------------------------------------------------------------------
 ;; Edit
