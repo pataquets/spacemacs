@@ -15,4 +15,13 @@ RUN \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/
 
-COPY . ${HOME}/.emacs.d/
+RUN \
+    apt-get update && \
+    DEBIAN_FRONTEND=noninteractive \
+    apt-get install -y \
+      mlocate \
+      ncdu
+
+RUN updatedb
+
+COPY . /root/.emacs.d/
