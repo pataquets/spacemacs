@@ -74,6 +74,9 @@ one over the other:
 | Extended VCS support (e.g. hg, svn) | X       | X          |             |
 | Stage hunks from buffer             |         | X          | X           |
 | Dired support                       | X       |            |             |
+| TTY support                         | X^{1}   | ?          | ?           |
+
+^{1} There's no fringe in TTY Emacs. Turn on ~diff-hl-margin-mode~ to use the buffer margin instead.
 
 * Key bindings
 VC commands:
